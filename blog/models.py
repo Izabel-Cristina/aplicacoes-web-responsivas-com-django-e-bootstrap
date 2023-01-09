@@ -10,5 +10,6 @@ class Post(models.Model):
     conteudo = models.TextField()
     data_publicacao = models.DateTimeField(default=timezone.now)
 
+#Função para exibir na tela o titulo.
     def __str__(self):
         return self.titulo
