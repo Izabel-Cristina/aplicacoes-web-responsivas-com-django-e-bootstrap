@@ -14,5 +14,3 @@ def post_detail(request, post_id):
         'post': post
     }
     return render(request, 'blog/post_detail.html', context)
-
-
