@@ -8,80 +8,159 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta charset="UTF-8">
     <title>Página Inicial</title>
 </head>
 <body>
+<div class="container-fluid bg-dark mb-2">
+    <div class="row justify-content-center">
+        <div class="col-xl-8">
+            <header class="bg-dark my-2 ">
 
-<header class="bg-dark my-2 ">
-
-    <nav class="navbar navbar-dark navbar-expand-lg bg-black">
-
-
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="#">Academia Python</a>
-
-            <button class="navbar-toggler"
-                    type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Blog</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cursos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
-                    </li>
+                <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                </ul>
+                    <div class="container-fluid px-0">
 
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+                        <a class="navbar-brand" href="#">Academia Python</a>
+
+                        <button class="navbar-toggler"
+                                type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Blog</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Cursos</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contato</a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Login</a>
+                                </li>
+                            </ul>
+
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search"
+                                       aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-Configurando_Carrossel->
+
+                <div class="container-fluid d-none d-lg-block px-0">
+                    <div id="carouselExampleInterval"
+                         class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+
+                                <svg class="bd-placeholder-img"
+                                     width="100%"
+                                     height="100%"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     aria-hidden="true"
+                                     preserveAspectRatio="xMidYMid slice"
+                                     focusable="false">
+                                    <rect width="100%" height="100%" fill="#3A3276"/>
+                                </svg>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Conheça os cursos da academia Python</h5>
+                                    <p>Aprenda a construir sites responsivos com Python, Django e Bootstrap 5.</p>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+
+                                <svg class="bd-placeholder-img"
+                                     width="100%"
+                                     height="100%"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     aria-hidden="true"
+                                     preserveAspectRatio="xMidYMid slice"
+                                     focusable="false">
+                                    <rect width="100%" height="100%" fill="#198754"/>
+                                </svg>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Siga-ns nas mídias
+                                        sociais.</h5>
+                                    <p>Conheça nosso canal do Youtube e receba dicas, tutoriais gratuitos e fique por
+                                        dentro
+                                        das novidades do mundo geek. </p>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item">
+                                <svg class="bd-placeholder-img"
+                                     width="100%"
+                                     height="100%"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     aria-hidden="true"
+                                     preserveAspectRatio="xMidYMid slice"
+                                     focusable="false">
+                                    <rect width="100%" height="100%" fill="#ffc107"/>
+                                </svg>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Entre em contato para receber descontos especiais!</h5>
+                                    <p>Faça parte do nosso grupo do Telegram para tirar dúvidas conosco, receber cupons
+                                        de
+                                        descontos e muito mais.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
         </div>
-    </nav>
-</header>
-
+    </div>
+</div>
 <main class="bg-light">
     <div class="container-fluid">
         <div class="row justify-content-center">
 
-            <div class="col-8">
+            <div class="col-xl-8">
+
 
                 <div class="row">
 
-                    <div class="col-8">
-                        << !-- Configuração da imagem-ç9 -- >>
+                    <div class="col-lg-8 d-flex">
+                        <!- Configuração da imagem-ç9->
 
-                        <div class="card">
+                        <div class="card vh-75 vw-100">
                             <img src="{% static 'blog/django-livre-1.jpg' %}" class="card-img-top" alt="imagem do card">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                    corporis distinctio doloremque fuga maiores neque omnis quod quos sunt vel. Adipisci
-                                    aspernatur illo iusto maiores molestiae nulla placeat rem veritatis.</p>
+                                <h5 class="card-title">{{posts.0.titulo}}</h5>
+                                <p class="card-text">{{posts.0.conteudo|safe}}</p>
 
                                 <p class="card-text">
-                                    <small class="text-muted">Publicado em 21/12/2012</small>
+                                    <small class="text-muted">{{posts.0.data_publicacao}}</small>
                                 </p>
 
                             </div>
@@ -89,8 +168,8 @@
 
                     </div>
                     <!- Configuração da parte do questionário->
-                    <div class="col-4">
-                        <div class="card">
+                    <div class="col-lg-4 d-none d-lg-flex">
+                        <div class="card vh-75 vw-100">
 
                             <img src="{% static 'blog/snipet-01.png' %}" class="card-img-top" alt="texto-questao">
 
@@ -114,35 +193,66 @@
                                         </ul>
                                         <a href="#" class="btn btn-success">Responder</a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="container bg-dark py-3 d-flex justify-content-center rounded">
+                    <span>
+
+                    <h1 class="text-info">Posts recentes</h1>
+
+                    </span>
+                </div>
+
+
+                <hr class="my-4">
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {% for i in '0123' %}
+                    <div class="col">
+                        <div class="card">
+                            <img src="{% static 'blog/django-02.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+
                 </div>
             </div>
         </div>
     </div>
 </main>
 
-<footer class="bg-black py-4 my-2">
+<footer class="bg-dark py-4 my-2">
     <div class="container-fluid text-white">
 
         <div class="row justify-content-center">
-            <div class="col-2 text-left">
+            <div class="col-lg-2 text-left">
                 <h5 class="text-uppercase fw-bold text-info">Quem somos?</h5>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
             </div>
 
-            <div class="col-4 text-left">
+            <div class="col-lg-4 text-left">
                 <h5 class="text-uppercase fw-bold text-info">Onde queremos chegar?</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium delectus dolore doloremque
                     expedita illo inventore quasi quia repudiandae tempora veniam! Amet asperiores consequuntur
                     dignissimos dolores laborum, possimus praesentium quod suscipit.</p>
             </div>
 
-            <div class="col-2 text-left">
+            <div class="col-lg-2 text-left">
                 <h5 class="text-uppercase fw-bold text-info">Siga-nos nas redes</h5>
 
                 <p>
