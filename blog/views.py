@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Post
 
 # Create your views here.
-
+#Puxar apenas os 5 ultimos post em ordem decrescente
 
 def home(request):
     posts = Post.objects.order_by('-data_publicacao')[:5]
@@ -16,4 +16,3 @@ def post_detail(request, post_id):
         'post': post
     }
     return render(request, 'blog/post_detail.html', context)
-
