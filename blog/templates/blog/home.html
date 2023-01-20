@@ -7,7 +7,7 @@
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/estilos.css' %}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,124 +20,10 @@
         <div class="col-xl-8">
             <header class="bg-dark my-2 ">
 
-                <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-
-
-                    <div class="container-fluid px-0">
-
-                        <a class="navbar-brand" href="#">Academia Python</a>
-
-                        <button class="navbar-toggler"
-                                type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent"
-                                aria-expanded="false"
-                                aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Blog</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Cursos</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contato</a>
-                                </li>
-
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Login</a>
-                                </li>
-                            </ul>
-
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search"
-                                       aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
+                {% include 'fragments/navbar.html'%}
 
                 <!-Configurando_Carrossel->
-
-                <div class="container-fluid d-none d-lg-block px-0">
-                    <div id="carouselExampleInterval"
-                         class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000">
-
-                                <svg class="bd-placeholder-img"
-                                     width="100%"
-                                     height="100%"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     aria-hidden="true"
-                                     preserveAspectRatio="xMidYMid slice"
-                                     focusable="false">
-                                    <rect width="100%" height="100%" fill="#3A3276"/>
-                                </svg>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Conheça os cursos da academia Python</h5>
-                                    <p>Aprenda a construir sites responsivos com Python, Django e Bootstrap 5.</p>
-                                </div>
-
-                            </div>
-                            <div class="carousel-item" data-bs-interval="2000">
-
-                                <svg class="bd-placeholder-img"
-                                     width="100%"
-                                     height="100%"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     aria-hidden="true"
-                                     preserveAspectRatio="xMidYMid slice"
-                                     focusable="false">
-                                    <rect width="100%" height="100%" fill="#198754"/>
-                                </svg>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Siga-ns nas mídias
-                                        sociais.</h5>
-                                    <p>Conheça nosso canal do Youtube e receba dicas, tutoriais gratuitos e fique por
-                                        dentro
-                                        das novidades do mundo geek. </p>
-                                </div>
-
-                            </div>
-                            <div class="carousel-item">
-                                <svg class="bd-placeholder-img"
-                                     width="100%"
-                                     height="100%"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     aria-hidden="true"
-                                     preserveAspectRatio="xMidYMid slice"
-                                     focusable="false">
-                                    <rect width="100%" height="100%" fill="#ffc107"/>
-                                </svg>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Entre em contato para receber descontos especiais!</h5>
-                                    <p>Faça parte do nosso grupo do Telegram para tirar dúvidas conosco, receber cupons
-                                        de
-                                        descontos e muito mais.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                                data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
+                {% include 'fragments/carousel.html' %}
             </header>
         </div>
     </div>
@@ -148,21 +34,40 @@
 
             <div class="col-xl-8">
 
-
                 <div class="row">
 
                     <div class="col-lg-8 d-flex">
-                        <!- Configuração da imagem-ç9->
+                        <!- Configuração da imagem-->
 
                         <div class="card vh-75 vw-100">
-                            <img src="{{posts.0.image_capa.url}}" class="card-img-top" alt="imagem do card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{posts.0.titulo}}</h5>
+                            <a href="{% url 'post_detail' posts.0.id %}">
+                                <img src="{{posts.0.image_capa.url}}" class="card-img-top" alt="imagem do card"></a>
+                            <div class="card-body pb-4">
+                                <a href="{%url 'post_detail' posts.0.id%}"><h4 class="card-title">{{posts.0.titulo}}</h4></a>
                                 <p class="card-text">{{posts.0.resumo|safe}}</p>
 
                                 <p class="card-text">
                                     <small class="text-muted">{{posts.0.data_publicacao}}</small>
                                 </p>
+
+                                <!--Incluindo botões-->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="span btn me-3">
+                                                <i class="bi bi-heart-fill">Curtir</i>
+                                            </div>
+                                            <div class="span btn me-3">
+                                                <i class="bi bi-chat-fill">Comentar</i>
+
+                                            </div>
+                                            <div class="span btn me-3">
+                                                <i class="bi bi-share-fill">Compartilhar</i>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -217,59 +122,47 @@
                 <!--Configurando os posts recentes-->
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     {% for post in posts|slice:"1:5" %}
-                        <div class="col d-flex">
-                        <div class="card vh-75 vw-100">
-                            <img src=" {{post.image_capa.url }}"
-                                 class="card-img-top img-300 "
-                                 alt="Imagem capa">
+                    <div class="col d-flex">
+                        <div class="card vh-75 vw-100 pb-3">
+                            <a href="{% url 'post_detail' post.id %}"><img src=" {{post.image_capa.url }}"
+                                             class="card-img-top img-300 "
+                                             alt="Imagem capa"></a>
+
                             <div class="card-body">
-                                <h5 class="card-title">{{post.titulo}}</h5>
+                                <a href="{% url 'post_detail' post.id %}"><h5 class="card-title">{{post.titulo}}</h5></a>
                                 <p class="card-text">{{post.resumo|slice:"250"|safe}}.</p>
                             </div>
+                            <!--Incluindo botões-->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="span btn me-3">
+                                            <i class="bi bi-heart-fill">Curtir</i>
+                                        </div>
+                                        <div class="span btn me-3">
+                                            <i class="bi bi-chat-fill">Comentar</i>
+
+                                        </div>
+                                        <div class="span btn me-3">
+                                            <i class="bi bi-share-fill">Compartilhar</i>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
                     </div>
                     {%endfor%}
+
 
                 </div>
             </div>
         </div>
     </div>
 </main>
-
-<footer class="bg-dark py-4 my-2">
-    <div class="container-fluid text-white">
-
-        <div class="row justify-content-center">
-            <div class="col-lg-2 text-left">
-                <h5 class="text-uppercase fw-bold text-info">Quem somos?</h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-            </div>
-
-            <div class="col-lg-4 text-left">
-                <h5 class="text-uppercase fw-bold text-info">Onde queremos chegar?</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium delectus dolore doloremque
-                    expedita illo inventore quasi quia repudiandae tempora veniam! Amet asperiores consequuntur
-                    dignissimos dolores laborum, possimus praesentium quod suscipit.</p>
-            </div>
-
-            <div class="col-lg-2 text-left">
-                <h5 class="text-uppercase fw-bold text-info">Siga-nos nas redes</h5>
-
-                <p>
-                    <i class="bi bi-youtube "></i>
-                    <a href="#" class="text-white" style="text-decoration:none;">Youtube</a>
-                </p>
-                <i class="bi bi-github"></i>
-                <a href="#" class="text-white" style="text-decoration:none">Github</a>
-
-
-            </div>
-        </div>
-
-    </div>
-
+<footer>
+    {% include 'fragments/footer.html'%}
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
