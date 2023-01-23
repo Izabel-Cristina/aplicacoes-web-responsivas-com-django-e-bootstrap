@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog.apps.BlogConfig",
-    "ckeditor",
-    "ckeditor_uploader",
+    "contato.apps.ContatoConfig",
+    "cursos.apps.CursosConfig",
+    "autenticacao.apps.AutenticacaoConfig",
     "exemplos.apps.ExemplosConfig",
+    "ckeditor_uploader",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -127,10 +130,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR,STATIC_URL)
+STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL)
 
 MEDIA_URL = 'images/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
