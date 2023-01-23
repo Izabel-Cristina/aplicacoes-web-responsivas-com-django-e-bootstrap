@@ -5,38 +5,80 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
 </head>
 <body>
-<!--Incluindo Navbar na página-->
-<div class="container-fluid bg-dark mb-2">
+    <!--Incluindo Navbar na página-->
+    <div class="container-fluid bg-dark mb-2">
     <div class="row justify-content-center">
         <div class="col-xl-8">
             <header class="bg-dark my-2 ">
                 {% include 'fragments/navbar.html'%}
+                {% include 'fragments/carousel.html' %}
             </header>
         </div>
     </div>
 </div>
-<h1>Blog</h1>
-<main class="bg-light">
+
+    <main class="bg-light">
     <div class="container-fluid">
         <div class="row justify-content-center">
+            <div class="col-xl-7">
 
-            <div class="col-xl-8">
+                {%for post in posts %}
+                    <div class="card mx-5 px-5 py-2">
+                            <a href="{% url 'post_detail' post.id %}">
+                                <img src="{{post.image_capa.url}}" class="card-img-top" alt="imagem do card"></a>
+                            <div class="card-body pb-4">
+                                <a href="{%url 'post_detail' post.id%}" class="text-decoration-none text-dark">
+                                    <h4 class="card-title">{{post.titulo}}</h4>
+                                </a>
+                                <p class="card-text">{{post.resumo|safe}}</p>
+
+                                <p class="card-text">
+                                    <small class="text-muted">{{post.data_publicacao}}</small>
+                                </p>
+
+                                <!--Incluindo botões-->
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="span btn me-3">
+                                                <i class="bi bi-heart-fill">Curtir</i>
+                                            </div>
+                                            <div class="span btn me-3">
+                                                <i class="bi bi-chat-fill">Comentar</i>
+
+                                            </div>
+                                            <div class="span btn me-3">
+                                                <i class="bi bi-share-fill">Compartilhar</i>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                <div class="my-3"></div>
+                {%endfor%}
             </div>
         </div>
     </div>
 </main>
+<footer>
+    {% include 'fragments/footer.html' with var_position='fixed-bottom'%}
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
-<footer>
-    {% include 'fragments/footer.html' with var_position='fixed-bottom'%}
 
-
-</footer>
 </body>
 </html>

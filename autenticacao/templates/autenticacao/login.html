@@ -26,66 +26,70 @@
 
             <div class="col-xl-8">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 bg-light">
-                        <div class="mt-3">
-                            <span class="fw-bold fs-2 text-primary ">Login</span>
-                        </div>
+                    <div class="col-md-6 ">
 
-                        <form>
-                            <p class="form-label mt-3">Usuário ou email</p>
-                            <div class="form-floating mb-3">
-                                <input type="email"
-                                       class="form-control"
-                                       id="idEmailLogin"
-                                       placeholder="name@example.com">
-                                <label class="text-muted" for="idEmailLogin">Digite aqui o seu email</label>
+                        <div class="card-body my-5 border rounded bg-light p-3">
+                            <div class="mt-3">
+                                <span class="fw-bold fs-2 text-primary ">Login</span>
                             </div>
-                            <p class="form-label mt-3">Senha</p>
-                            <div class="form-floating">
-                                <input type="password"
-                                       class="form-control"
-                                       id="idSenhaLogin"
-                                       placeholder="Senha">
-                                <label class="text-muted" for="idSenhaLogin">Digite aqui a sua senha</label>
-                            </div>
-                            <div class="my-2 text-end">
-                                <a class="btn" href="#">
+
+                            <form>
+                                <p class="form-label mt-3">Usuário ou email</p>
+                                <div class="form-floating mb-3">
+                                    <input type="email"
+                                           class="form-control"
+                                           id="idEmailLogin"
+                                           placeholder="name@example.com">
+                                    <label class="text-muted" for="idEmailLogin">Digite aqui o seu email</label>
+                                </div>
+                                <p class="form-label mt-3">Senha</p>
+                                <div class="form-floating">
+                                    <input type="password"
+                                           class="form-control"
+                                           id="idSenhaLogin"
+                                           placeholder="Senha">
+                                    <label class="text-muted" for="idSenhaLogin">Digite aqui a sua senha</label>
+                                </div>
+                                <div class="my-3 text-end">
+                                    <a class="btn" href="#">
                                     <span class="text-success fw-bold">
                                         Esqueceu sua senha?
                                     </span>
-                                </a>
-                            </div>
-                            <div class="d-grid mt-2">
-                                <button class="btn btn-secondary" type="button">
-                                    Logar
+                                    </a>
+                                </div>
+                                <!--Botões de login-->
+                                <div class="d-grid mt-2">
+                                    <button class="btn btn-success" type="button">
+                                        Logar
 
-                                </button>
-                            </div>
+                                    </button>
+                                </div>
 
-                            <div class="d-grid mt-2">
-                                <button class="btn btn-danger" type="button">
-                                    <i class="bi bi-google"></i>
-                                </button>
-                            </div>
+                                <div class="d-grid mt-2">
+                                    <button class="btn btn-danger" type="button">
+                                        <i class="bi bi-google"></i>
+                                    </button>
+                                </div>
 
-                            <div class="d-grid mt-2">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="bi bi-facebook"></i>
-                                </button>
-                            </div>
+                                <div class="d-grid mt-2">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="bi bi-facebook"></i>
+                                    </button>
+                                </div>
 
-                              <div class="d-grid mt-2">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="bi bi-twitter"></i>
-                                </button>
-                            </div>
-                            <div class="my-2 text-center">
-                                <a href="#" class="btn text-secondary fw-bold">
-                                    Criar conta
-                                </a>
-                            </div>
+                                <div class="d-grid mt-2">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="bi bi-twitter"></i>
+                                    </button>
+                                </div>
+                                <div class="my-2 text-center">
+                                    <a href="#" class="btn text-secondary fw-bold">
+                                        Criar conta
+                                    </a>
+                                </div>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,7 +102,7 @@
         crossorigin="anonymous"></script>
 
 <footer>
-    {% include 'fragments/footer.html' with var_position='fixed-bottom'%}
+    {% include 'fragments/footer.html' with var_position='position-sticky'%}
 
 
 </footer>
