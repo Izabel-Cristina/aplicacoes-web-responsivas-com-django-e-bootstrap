@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse
 import re
-
+from .form_exemplos import FormExemplo
 # Create your views here.
 def get_bootstrap(request):
     return render(request, 'exemplos/16_forms_parte_i.html')
@@ -34,15 +34,32 @@ def processa_formulario_v1(request):
     email_st = 'is_valid'
     senha_st = 'is_valid'
 
-    context = {
-        "email": email,
-        "senha": senha
-
-    }
 
     if validou_form(email,senha):
         return HttpResponseRedirect("/")
     else:
-       return render(request, 'exemplos/16_forms_parte_i.html', context)
+        if not validou_email(email):
+            email_st = 'is-invalid'
+        if not validou_senha(senha):
+            senha_st = 'is-invalid'
 
+        context = {
+            "email": email,
+            "senha": senha,
+            "email_st": email_st,
+            "senha_st": senha_st
+
+        }
+        return render(request, 'exemplos/16_forms_parte_i.html', context)
+
+def processa_formulario_v2(request):
+    form = FormExemplo()
+    if request.method == 'POST':
+        form = FormExemplo(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            pwd = form.cleaned_data['senha']
+            msg = form.cleaned_data["mensagem"]
+            return HttpResponse("Formulário validado com sucesso. {} - {} - {}".format(email, pwd, msg))
+    return render(request, 'exemplos/17_forms_parte_ii.html', {'form':form})
 

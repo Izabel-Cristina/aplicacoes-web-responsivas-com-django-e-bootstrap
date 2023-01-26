@@ -36,10 +36,14 @@
                                    <input type="email"
                                           name="email"
                                           placeholder="Digite aqui o seu email"
-                                          class="form-control"
+                                          class="form-control {{ email_st }}"
                                           required
                                           maxlength="100"
-                                          value="{{ email }}">
+                                          value="{{ email }}"
+                                          aria-describedby="email_feedback_server">
+                                    <div id="email_feedback_server" class="invalid-feedback">
+                                        Email inválido
+                                    </div>
 
 
                                 </div>
@@ -49,10 +53,15 @@
                                     <input type="password"
                                            name="senha"
                                            placeholder="Digite aqui a sua senha"
-                                           class="form-control"
+                                           class="form-control {{ senha_st }}"
                                             required
                                             maxlength="20"
-                                            value="{{ senha }}">
+                                            value="{{ senha }}"
+                                            aria-describedby="senha_feedback_server">
+                                    <div id="senha_feedback_server" class="invalid-feedback">
+                                        Senha não atende aos critérios de segurança
+                                    </div>
+
                                     <div class="card-footer ps-0 pt-3">
                                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                                     </div>
